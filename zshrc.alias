@@ -1,0 +1,37 @@
+alias ls='ls  -FG'
+alias ll='ls -lFG'
+alias l='ls -FG'
+alias src='exec $SHELL'
+alias .='open .'
+alias hgrep='history | grep'
+alias v='/usr/local/bin/vim'
+alias vi='/usr/local/bin/vim'
+alias vim='/usr/local/bin/vim'
+alias e='exit'
+alias pw='ping www.google.com'
+alias va='vagrant'
+alias sb='subl'
+alias g='git'
+alias t='touch'
+alias c='cd'
+alias mk='mkdir'
+# alias rm='trash'
+alias pc='pbcopy'
+alias zshrc='vim ~/zsh_dot'
+
+
+# peco
+alias cl='cd "$( ls -1d */ | peco )"'
+
+alias memo='vim "$(find ~/Memo -mindepth 1 -maxdepth 2 -name "*" | grep -v ".DS_Store" | peco)"'
+
+alias sl='ssh "$(cat ~/.ssh/config | grep "Host "| awk '{print $2}' | peco)"'
+
+REPOS=~/Repos
+alias repos='cd "${REPOS}/$(find $REPOS -follow -mindepth 1 -maxdepth 2 -name "*" -type d | grep -v "\." | grep -v "pycache" |
+while read line
+do
+       echo $line | sed -e "s:${REPOS}/::"
+done | peco)"'
+
+alias sl='ssh $(cat ~/.ssh/config | grep "Host "| awk "{print \$2}" | peco)'
