@@ -1,0 +1,9 @@
+[user]
+	name = sga-urase-shinsuke
+	email = Shinsuke.x.Urase@sony.com
+[core]
+	editor = vim
+[alias]
+	co = checkout
+	cm = commit
+	ss = stash
